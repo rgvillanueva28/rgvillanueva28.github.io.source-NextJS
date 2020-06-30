@@ -18,17 +18,16 @@ const pages = [
 export default function LayoutComponent({ children }) {
   return (
     <>
-      <nav>
-        <ul>
+      <header className="sm:flex sm:justify-between sm:items-center sm:p-5 bg-teal-500">
+        <nav className="block">
           {pages.map(({ label, href }) => (
-            <li key={label}>
-              <Link href={href}>
-                <a>{label}</a>
-              </Link>
-            </li>
+            <Link href={href}>
+              <a className="no-underline p-5 hover:bg-gray-500">{label}</a>
+            </Link>
           ))}
-        </ul>
-      </nav>
+        </nav>
+      </header>
+
       {children}
     </>
   );

@@ -7,6 +7,7 @@ export default function LayoutComponent({ children }) {
   return (
     <Layout className="layout">
       <Header>
+        <div className="logo" />
         <Menu mode="horizontal" theme="dark">
           <Menu.Item key="1">
             <Link href="/">

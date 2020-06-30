@@ -17,16 +17,19 @@ const pages = [
 
 export default function LayoutComponent({ children }) {
   return (
-    <nav>
-      <ul>
-        {pages.map(({ label, href }) => (
-          <li key={label}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      <nav>
+        <ul>
+          {pages.map(({ label, href }) => (
+            <li key={label}>
+              <Link href={href}>
+                <a>{label}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {children}
+    </>
   );
 }

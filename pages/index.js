@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>RANE GILLIAN</title>
       </Head>
-      <div>
+      <div className="container mx-auto">
         <h1>RANE GILLIAN</h1>
       </div>
     </LayoutComponent>

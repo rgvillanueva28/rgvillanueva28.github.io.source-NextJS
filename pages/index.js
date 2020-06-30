@@ -1,9 +1,5 @@
 import Head from "next/head";
-import { Typography, Layout, Menu } from "antd";
 import LayoutComponent from "../components/layout";
-
-const { Title } = Typography;
-const { Content } = Layout;
 
 export default function Home() {
   return (
@@ -11,9 +7,9 @@ export default function Home() {
       <Head>
         <title>RANE GILLIAN</title>
       </Head>
-      <Content>
-        <Title>RANE GILLIAN</Title>
-      </Content>
+      <div>
+        <h1>RANE GILLIAN</h1>
+      </div>
     </LayoutComponent>
   );
 }

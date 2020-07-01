@@ -6,7 +6,6 @@ export default function LayoutComponent({ children }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-
         <meta
           name="description"
           content="Personal website of Rane Gillian created with Next.JS"

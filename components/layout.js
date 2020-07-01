@@ -1,32 +1,27 @@
-import Link from "next/link";
-
-const pages = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
+import Head from "next/head";
+import Header from "../components/header";
 
 export default function LayoutComponent({ children }) {
   return (
     <>
-      <header className="sm:flex sm:justify-between sm:items-center sm:p-5 bg-teal-500">
-        <nav className="block">
-          {pages.map(({ label, href }) => (
-            <Link href={href}>
-              <a className="no-underline p-5 hover:bg-gray-500">{label}</a>
-            </Link>
-          ))}
-        </nav>
-      </header>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+
+        <meta
+          name="description"
+          content="Personal website of Rane Gillian created with Next.JS"
+        />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+          rel="stylesheet"
+          key="google-font-cabin"
+        />
+      </Head>
+      <Header />
 
       {children}
     </>

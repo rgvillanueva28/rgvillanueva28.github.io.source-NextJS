@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaCaretUp } from "react-icons/fa";
+import { useTransition, animated } from "react-spring";
 
 const pages = [
   {
@@ -18,8 +19,6 @@ const pages = [
 ];
 
 export default function Header() {
-  const duration = 500;
-
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
@@ -49,20 +48,16 @@ export default function Header() {
       </div>
 
       {/* responsive */}
-      <label htmlFor="menu-toggle" className="cursor-pointer lg:hidden block">
+
+      <button
+        className="cursor-pointer lg:hidden block focus:outline-none hover:bg-red-500 border border-transparent hover:border-white rounded-md p-1"
+        onClick={() => setToggleMenu(!toggleMenu)}
+      >
         {toggleMenu ? (
           <FaCaretUp color="white" size="32" />
         ) : (
           <FaBars color="white" size="32" />
         )}
-      </label>
-      <button>
-        <input
-          type="checkbox"
-          className="hidden"
-          id="menu-toggle"
-          onChange={() => setToggleMenu(!toggleMenu)}
-        />
       </button>
 
       {/* right part */}
@@ -78,7 +73,7 @@ export default function Header() {
             {pages.map(({ label, href }) => (
               <li key={label}>
                 <Link href={href}>
-                  <a className="lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
+                  <a className="lg:py-4 py-3 px-5 block rounded-md border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
                     {label}
                   </a>
                 </Link>

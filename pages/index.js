@@ -3,7 +3,7 @@ import LayoutComponent from "../components/layout";
 import CardOne from "../components/cardOne";
 import CardTwo from "../components/cardTwo";
 
-import { Transition } from "react-transition-group";
+import { useSpring, animated } from "react-spring";
 
 export default function Home() {
   return (

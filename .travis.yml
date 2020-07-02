@@ -9,6 +9,9 @@ install:
 script:
   - yarn build
 
+after_success:
+  - touch out/.nojekyll
+
 deploy:
   provider: pages
   skip-cleanup: true

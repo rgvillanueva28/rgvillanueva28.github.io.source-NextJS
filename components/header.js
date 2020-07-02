@@ -52,12 +52,13 @@ export default function Header() {
       <button
         className="cursor-pointer lg:hidden block focus:outline-none hover:bg-red-500 border border-transparent hover:border-white rounded-md p-1"
         onClick={() => setToggleMenu(!toggleMenu)}
+        id="toggle-menu"
       >
-        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          {toggleMenu
-            ? (props) => <FaCaretUp color="white" size="32" />
-            : (props) => <FaBars color="white" size="32" />}
-        </Spring>
+        {toggleMenu ? (
+          <FaCaretUp color="white" size="32" />
+        ) : (
+          <FaBars color="white" size="32" />
+        )}
       </button>
 
       {/* right part */}
@@ -70,29 +71,25 @@ export default function Header() {
       >
         {(props) => (
           <animated.div
+            style={props}
             className={
-              "lg:flex lg:items-center lg:w-auto w-full text-white block"
+              "lg:flex lg:items-center lg:w-auto w-full text-white lg:h-auto"
             }
             id="menu"
-            style={props}
           >
-            {toggleMenu ? (
-              <nav>
-                <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
-                  {pages.map(({ label, href }) => (
-                    <li key={label}>
-                      <Link href={href}>
-                        <a className="lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
-                          {label}
-                        </a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            ) : (
-              <></>
-            )}
+            <nav className={toggleMenu ? "visible" : "invisible lg:visible"}>
+              <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
+                {pages.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link href={href}>
+                      <a className="lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
+                        {label}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </animated.div>
         )}
       </Spring>

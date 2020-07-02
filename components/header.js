@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaCaretUp } from "react-icons/fa";
-import { useTransition, animated } from "react-spring";
+import { Spring, animated } from "react-spring/renderprops.cjs";
 
 const pages = [
   {
@@ -53,35 +53,49 @@ export default function Header() {
         className="cursor-pointer lg:hidden block focus:outline-none hover:bg-red-500 border border-transparent hover:border-white rounded-md p-1"
         onClick={() => setToggleMenu(!toggleMenu)}
       >
-        {toggleMenu ? (
-          <FaCaretUp color="white" size="32" />
-        ) : (
-          <FaBars color="white" size="32" />
-        )}
+        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+          {toggleMenu
+            ? (props) => <FaCaretUp color="white" size="32" />
+            : (props) => <FaBars color="white" size="32" />}
+        </Spring>
       </button>
 
       {/* right part */}
-      <div
-        className={
-          "lg:flex lg:items-center lg:w-auto w-full text-white " +
-          (toggleMenu ? "block" : "hidden")
-        }
-        id="menu"
+      <Spring
+        native
+        force
+        config={{ tension: 2000, friction: 100, precision: 1 }}
+        from={{ height: toggleMenu ? 0 : "auto" }}
+        to={{ height: toggleMenu ? "auto" : 0 }}
       >
-        <nav>
-          <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
-            {pages.map(({ label, href }) => (
-              <li key={label}>
-                <Link href={href}>
-                  <a className="lg:py-4 py-3 px-5 block rounded-md border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
-                    {label}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+        {(props) => (
+          <animated.div
+            className={
+              "lg:flex lg:items-center lg:w-auto w-full text-white block"
+            }
+            id="menu"
+            style={props}
+          >
+            {toggleMenu ? (
+              <nav>
+                <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
+                  {pages.map(({ label, href }) => (
+                    <li key={label}>
+                      <Link href={href}>
+                        <a className="lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
+                          {label}
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ) : (
+              <></>
+            )}
+          </animated.div>
+        )}
+      </Spring>
     </header>
   );
 }

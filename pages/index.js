@@ -12,7 +12,6 @@ export default function Home() {
       <Head>
         <title>RANE GILLIAN</title>
       </Head>
-
       <div className="container mx-auto">
         {/* <FrontMan /> */}
 

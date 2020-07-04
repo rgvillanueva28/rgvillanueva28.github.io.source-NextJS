@@ -3,7 +3,7 @@ import Header from "../components/header";
 
 export default function LayoutComponent({ children }) {
   return (
-    <>
+    <div className="min-h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,6 +18,6 @@ export default function LayoutComponent({ children }) {
       <Header />
 
       {children}
-    </>
+    </div>
   );
 }

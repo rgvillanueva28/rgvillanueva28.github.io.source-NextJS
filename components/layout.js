@@ -17,7 +17,7 @@ export default function LayoutComponent({ children }) {
       </Head>
       <Header />
 
-      {children}
+      <div className="pt-16">{children}</div>
     </div>
   );
 }

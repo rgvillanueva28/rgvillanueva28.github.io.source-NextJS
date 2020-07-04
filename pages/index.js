@@ -1,7 +1,7 @@
 import Head from "next/head";
 import LayoutComponent from "../components/layout";
-import CardOne from "../components/cardOne";
-import AboutCard from "../components/aboutCard";
+import CardOne from "../components/cards/cardOne";
+import AboutCard from "../components/cards/aboutCard";
 import FrontMan from "../components/frontMan";
 
 import { useSpring, animated } from "react-spring";

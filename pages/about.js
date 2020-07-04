@@ -1,6 +1,6 @@
 import LayoutComponent from "../components/layout";
 import Head from "next/head";
-import AboutCard from "../components/aboutCard";
+import AboutCard from "../components/cards/aboutCard";
 
 export default function About() {
   return (

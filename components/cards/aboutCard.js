@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { MdSchool, MdMail } from "react-icons/md";
 import { FaBuilding, FaRegCalendar } from "react-icons/fa";
+import Card from "../card";
 
 export default function AboutCard() {
   return (
-    <div className="m-5 sm:m-10 md:m-16 py-10 px-2 sm:px-5 md:px-10 lg:px-16 rounded-md shadow-lg bg-gray-100 md:flex md:flex-wrap items-center">
+    <Card className="md:flex md:flex-wrap">
       <div>
         <img
           src="/logo.png"
@@ -41,6 +42,6 @@ export default function AboutCard() {
           </Link>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

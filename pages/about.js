@@ -1,5 +1,6 @@
 import LayoutComponent from "../components/layout";
 import Head from "next/head";
+import AboutCard from "../components/aboutCard";
 
 export default function About() {
   return (
@@ -7,7 +8,9 @@ export default function About() {
       <Head>
         <title>RANE GILLIAN | About</title>
       </Head>
-      <h1>About page</h1>
+      <div className="container mx-auto">
+        <AboutCard />
+      </div>
     </LayoutComponent>
   );
 }

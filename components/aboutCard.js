@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { MdSchool, MdMail } from "react-icons/md";
-import { FaBuilding } from "react-icons/fa";
+import { FaBuilding, FaRegCalendar } from "react-icons/fa";
 
-export default function CardTwo() {
+export default function AboutCard() {
   return (
-    <div className="m-5 sm:m-10 md:m-16 py-10 px-2 sm:px-5 md:px-10 lg:px-16 rounded-md shadow-xs bg-gray-100 md:flex md:flex-wrap items-center">
+    <div className="m-5 sm:m-10 md:m-16 py-10 px-2 sm:px-5 md:px-10 lg:px-16 rounded-md shadow-lg bg-gray-100 md:flex md:flex-wrap items-center">
       <div>
         <img
           src="/logo.png"
@@ -23,6 +23,10 @@ export default function CardTwo() {
           <p className="text-gray-600">
             <FaBuilding className="inline text-black mr-1 my-auto" />
             Mapua University
+          </p>
+          <p className="text-gray-600">
+            <FaRegCalendar className="inline text-black mr-1 my-auto" />
+            2018 - present
           </p>
           <p className="text-gray-600">
             <MdMail className="inline text-black mr-1 my-auto" />

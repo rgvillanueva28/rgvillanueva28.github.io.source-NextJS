@@ -1,7 +1,7 @@
 import Head from "next/head";
 import LayoutComponent from "../components/layout";
 import CardOne from "../components/cardOne";
-import CardTwo from "../components/cardTwo";
+import AboutCard from "../components/aboutCard";
 import FrontMan from "../components/frontMan";
 
 import { useSpring, animated } from "react-spring";
@@ -17,7 +17,7 @@ export default function Home() {
 
         <CardOne />
 
-        <CardTwo />
+        <AboutCard />
       </div>
     </LayoutComponent>
   );

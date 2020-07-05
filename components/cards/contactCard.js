@@ -14,7 +14,7 @@ function ContactCard() {
           </div>
           <p>Facebook</p>
         </div>
-        <div class="container inline">
+        <div className="container inline">
           <div className="inline-block mx-2 bg-blue-600 rounded-full border-0">
             <a href="https://www.linkedin.com/in/ranegv/" target="_blank">
               <FaLinkedinIn size={64} className="inline text-white p-2" />
@@ -22,7 +22,7 @@ function ContactCard() {
           </div>
           <p>LinkedIn</p>
         </div>
-        <div class="container inline">
+        <div className="container inline">
           <div className="inline-block mx-2 bg-white rounded-full">
             <a href="https://github.com/rgvillanueva28" target="_blank">
               <FaGithub size={64} className="inline  text-black" />
@@ -30,7 +30,7 @@ function ContactCard() {
           </div>
           <p>Github</p>
         </div>
-        <div class="container inline">
+        <div className="container inline">
           <div className="inline-block mx-2 bg-red-700 rounded-full border-0">
             <a href="mailto:rgvillanueva28@gmail.com">
               <FiMail size={64} className="inline text-white p-2" />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaCaretUp } from "react-icons/fa";
-import { Spring, animated } from "react-spring/renderprops.cjs";
+import { Spring, Transition, animated } from "react-spring/renderprops.cjs";
 
 const pages = [
   {
@@ -23,6 +23,7 @@ export default function Header() {
 
   return (
     <header
+      id="header"
       className={
         "w-full lg:px-16 px-6 lg:py-0 py-2 flex flex-wrap items-center shadow-md " +
         "bg-red-700 fixed"
@@ -49,17 +50,39 @@ export default function Header() {
 
       {/* responsive */}
 
-      <button
-        className="cursor-pointer lg:hidden block focus:outline-none hover:bg-red-500 border border-transparent hover:border-white rounded-md p-1"
+      <div
+        className="transition duration-200 cursor-pointer lg:hidden  focus:outline-none hover:bg-red-500 border border-transparent hover:border-white rounded-md p-1 py-3 relative"
+        style={{ minHeight: 42, minWidth: 42 }}
         onClick={() => setToggleMenu(!toggleMenu)}
         id="toggle-menu"
       >
-        {toggleMenu ? (
+        <Transition
+          items={toggleMenu}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+        >
+          {(toggleMenu) =>
+            toggleMenu
+              ? (props) => (
+                  <div className="absolute" style={{ top: "4px" }}>
+                    <FaCaretUp style={props} color="white" size={32} />
+                  </div>
+                )
+              : (props) => (
+                  <div className="absolute" style={{ top: "4px" }}>
+                    <FaBars style={props} color="white" size={32} />
+                  </div>
+                )
+          }
+        </Transition>
+
+        {/* {toggleMenu ? (
           <FaCaretUp color="white" size="32" />
         ) : (
           <FaBars color="white" size="32" />
-        )}
-      </button>
+        )} */}
+      </div>
 
       {/* right part */}
       <Spring
@@ -82,7 +105,7 @@ export default function Header() {
                 {pages.map(({ label, href }) => (
                   <li key={label}>
                     <Link href={href}>
-                      <a className="lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
+                      <a className="transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
                         {label}
                       </a>
                     </Link>

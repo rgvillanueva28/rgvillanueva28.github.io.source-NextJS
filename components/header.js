@@ -25,8 +25,8 @@ export default function Header() {
     <header
       id="header"
       className={
-        "w-full lg:px-16 px-6 lg:py-0 py-2 flex flex-wrap items-center shadow-md " +
-        "bg-red-700 fixed"
+        "w-full lg:px-16 px-6 lg:py-0 py-2 flex flex-wrap items-center" +
+        "bg-transparent fixed"
       }
     >
       {/* left part */}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars, FaCaretUp } from "react-icons/fa";
 import { Spring, Transition, animated } from "react-spring/renderprops.cjs";
 
@@ -18,15 +18,17 @@ const pages = [
   },
 ];
 
-export default function Header() {
+export default function Header(props) {
+
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <header
       id="header"
       className={
-        "w-full lg:px-16 px-6 lg:py-0 py-2 flex flex-wrap items-center" +
-        "bg-transparent fixed"
+        "fixed w-full lg:px-16 px-6 lg:py-0 py-2 flex flex-wrap items-center " +
+        (toggleMenu ? "bg-black bg-opacity-75" : (props.onTop ? "bg-transparent" : "bg-accent-dark"))
+        
       }
     >
       {/* left part */}
@@ -51,7 +53,7 @@ export default function Header() {
       {/* responsive */}
 
       <div
-        className="transition duration-200 cursor-pointer lg:hidden  focus:outline-none hover:bg-red-500 border border-transparent hover:border-white rounded-md p-1 py-3 relative"
+        className="transition duration-200 cursor-pointer lg:hidden  focus:outline-none hover:bg-gray-600 border border-transparent hover:border-white rounded-md p-1 py-3 relative"
         style={{ minHeight: 42, minWidth: 42 }}
         onClick={() => setToggleMenu(!toggleMenu)}
         id="toggle-menu"
@@ -65,15 +67,15 @@ export default function Header() {
           {(toggleMenu) =>
             toggleMenu
               ? (props) => (
-                  <div className="absolute" style={{ top: "4px" }}>
-                    <FaCaretUp style={props} color="white" size={32} />
-                  </div>
-                )
+                <div className="absolute" style={{ top: "4px" }}>
+                  <FaCaretUp style={props} color="white" size={32} />
+                </div>
+              )
               : (props) => (
-                  <div className="absolute" style={{ top: "4px" }}>
-                    <FaBars style={props} color="white" size={32} />
-                  </div>
-                )
+                <div className="absolute" style={{ top: "4px" }}>
+                  <FaBars style={props} color="white" size={32} />
+                </div>
+              )
           }
         </Transition>
 
@@ -105,7 +107,10 @@ export default function Header() {
                 {pages.map(({ label, href }) => (
                   <li key={label}>
                     <Link href={href}>
-                      <a className="transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-red-300 hover:bg-red-500">
+                      <a
+                        className="transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-gray-300 hover:bg-gray-500"
+                        onClick={() => setToggleMenu(false)}
+                      >
                         {label}
                       </a>
                     </Link>

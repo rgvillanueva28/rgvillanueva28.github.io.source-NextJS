@@ -7,6 +7,8 @@ import FrontMan from "../components/frontMan";
 import { useSpring, animated } from "react-spring";
 
 export default function Home() {
+  
+
   return (
     <LayoutComponent>
       <Head>
@@ -15,9 +17,10 @@ export default function Home() {
       <div className="container mx-auto">
         {/* <FrontMan /> */}
 
-        <CardOne />
+        <CardOne/>
 
         <AboutCard />
+        <div className="p-1"></div>
       </div>
     </LayoutComponent>
   );

@@ -13,6 +13,18 @@ module.exports = {
       xl: "1280px",
       xxl: "1560px",
     },
+    extend: {
+      colors: {
+        dark: "#0B2545",
+        accent: {
+          light: "#8DA9C4",
+          dark: "#13315C",
+          mid: "#134074",
+        },
+        foreground: "#EEF4ED",
+      }
+    },
+
   },
   variants: {},
   plugins: [],

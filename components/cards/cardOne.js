@@ -1,12 +1,12 @@
 export default function CardOne() {
   return (
-    <div className="text-center container-sm p-10 sm:px-12 md:px-20 lg:px-32 rounded-md lg:flex lg:flex-row h-screen">
+    <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-32 rounded-md lg:flex lg:flex-row h-screen">
       {/* <img
         src="/logo.png"
         className="w-24 md:w-48 xl:w-64 mx-auto mb-5 rounded-full bg-gray-500"
       /> */}
-      <img className="w-screen" src="/landingImage.svg" />
-      <div className="lg:text-right lg:pl-24 xl:pl-64 pt-5 lg:pt-0 my-auto">
+      <img className="mx-5 pt-10 sm:mx-20 md:mx-24 lg:w-screen h-full" src="/landingImage.svg" />
+      <div className="lg:text-right lg:pl-24 xl:pl-64 pt-5 lg:pt-0 h-full">
         <h4 className="text-white">
           <strong>Hi there! Welcome to my page. </strong>
         </h4>

@@ -38,7 +38,9 @@ export default function LayoutComponent({ children }) {
       </Head>
       <Header onTop={onTop} />
 
-      <div className="">{children}</div>
+      <div className="">
+        {children}
+      </div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function AboutCard() {
           </p>
           <p className="text-gray-600">
             <FaBuilding className="inline text-black mr-1 my-auto" />
-            Mapua University
+            Mapúa University
           </p>
           <p className="text-gray-600">
             <FaRegCalendar className="inline text-black mr-1 my-auto" />

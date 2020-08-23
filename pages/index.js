@@ -7,7 +7,6 @@ import FrontMan from "../components/frontMan";
 import { useSpring, animated } from "react-spring";
 
 export default function Home() {
-  
 
   return (
     <LayoutComponent>

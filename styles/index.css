@@ -30,6 +30,12 @@ a {
   @apply text-base;
 }
 
+header {
+  -webkit-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
 @tailwind components;
 
 @tailwind utilities;

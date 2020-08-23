@@ -13,6 +13,10 @@ const pages = [
     href: "/about",
   },
   {
+    label: "Portfolio",
+    href: "/portfolio",
+  },
+  {
     label: "Contact",
     href: "/contact",
   },
@@ -27,16 +31,16 @@ export default function Header(props) {
       id="header"
       className={
         "fixed w-full lg:px-16 px-6 lg:py-0 py-2 flex flex-wrap items-center " +
-        (toggleMenu ? "bg-black bg-opacity-75" : (props.onTop ? "bg-transparent" : "bg-accent-dark"))
+        (toggleMenu ? "bg-accent-dark" : (props.onTop ? "bg-transparent" : "bg-accent-dark"))
         
       }
     >
       {/* left part */}
-      <div className="flex-1 flex justify-between items-center text-white">
+      <div className="flex-1 flex justify-between items-center text-foreground">
         <Link href="#">
           <a className="fill-current">
             <img
-              className="bg-white rounded-full"
+              className="bg-foreground rounded-full"
               src="/logo.png"
               width="32"
               height="32"
@@ -44,7 +48,7 @@ export default function Header(props) {
           </a>
         </Link>
         <div className="m-0 mr-auto p-0 pl-1 my-auto">
-          <h1 className="ranegillian text-2xl text-white">
+          <h1 className="ranegillian text-2xl text-foreground">
             <strong>RANE</strong>GILLIAN
           </h1>
         </div>
@@ -53,7 +57,7 @@ export default function Header(props) {
       {/* responsive */}
 
       <div
-        className="transition duration-200 cursor-pointer lg:hidden  focus:outline-none hover:bg-gray-600 border border-transparent hover:border-white rounded-md p-1 py-3 relative"
+        className="transition duration-200 cursor-pointer lg:hidden  focus:outline-none hover:bg-accent-light border border-transparent hover:border-foreground rounded-md p-1 py-3 relative"
         style={{ minHeight: 42, minWidth: 42 }}
         onClick={() => setToggleMenu(!toggleMenu)}
         id="toggle-menu"
@@ -68,12 +72,12 @@ export default function Header(props) {
             toggleMenu
               ? (props) => (
                 <div className="absolute" style={{ top: "4px" }}>
-                  <FaCaretUp style={props} color="white" size={32} />
+                  <FaCaretUp style={props} color="#EEF4ED" size={32} />
                 </div>
               )
               : (props) => (
                 <div className="absolute" style={{ top: "4px" }}>
-                  <FaBars style={props} color="white" size={32} />
+                  <FaBars style={props} color="#EEF4ED" size={32} />
                 </div>
               )
           }
@@ -98,7 +102,7 @@ export default function Header(props) {
           <animated.div
             style={props}
             className={
-              "lg:flex lg:items-center lg:w-auto w-full text-white lg:h-auto"
+              "lg:flex lg:items-center lg:w-auto w-full text-foreground lg:h-auto"
             }
             id="menu"
           >
@@ -108,7 +112,7 @@ export default function Header(props) {
                   <li key={label}>
                     <Link href={href}>
                       <a
-                        className="transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-gray-300 hover:bg-gray-500"
+                        className="transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-foreground hover:bg-accent-light"
                         onClick={() => setToggleMenu(false)}
                       >
                         {label}

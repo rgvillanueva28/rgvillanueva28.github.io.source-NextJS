@@ -6,13 +6,13 @@ function ContactCard() {
   return (
     <Card className="flex flex-wrap">
       <div className="mx-auto text-center inline-flex ">
-        <div classname="container inline">
+        <div className="container inline">
           <div className="inline-block mx-2 bg-blue-700 rounded-full border-0">
             <a href="https://www.facebook.com/ranegillian/" target="_blank">
               <FaFacebookF size={64} className="inline text-white p-2" />
             </a>
           </div>
-          <p>Facebook</p>
+          <p className="text-accent-light">Facebook</p>
         </div>
         <div className="container inline">
           <div className="inline-block mx-2 bg-blue-600 rounded-full border-0">
@@ -20,7 +20,7 @@ function ContactCard() {
               <FaLinkedinIn size={64} className="inline text-white p-2" />
             </a>
           </div>
-          <p>LinkedIn</p>
+          <p className="text-accent-light">LinkedIn</p>
         </div>
         <div className="container inline">
           <div className="inline-block mx-2 bg-white rounded-full">
@@ -28,7 +28,7 @@ function ContactCard() {
               <FaGithub size={64} className="inline  text-black" />
             </a>
           </div>
-          <p>Github</p>
+          <p className="text-accent-light">Github</p>
         </div>
         <div className="container inline">
           <div className="inline-block mx-2 bg-red-700 rounded-full border-0">
@@ -36,7 +36,7 @@ function ContactCard() {
               <FiMail size={64} className="inline text-white p-2" />
             </a>
           </div>
-          <p>Mail</p>
+          <p className="text-accent-light">Mail</p>
         </div>
       </div>
     </Card>

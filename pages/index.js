@@ -6,7 +6,27 @@ import FrontMan from "../components/frontMan";
 
 import { useSpring, animated } from "react-spring";
 
+import { useState, useEffect } from 'react';
+
 export default function Home() {
+  let listener = null;
+  const [onTop, setOnTop] = useState(true);
+
+  useEffect(() => {
+    listener = document.addEventListener("scroll", e => {
+      var scrolled = document.scrollingElement.scrollTop
+      if (scrolled >= 60) {
+        setOnTop(false)
+      } else {
+        setOnTop(true)
+      }
+    })
+
+    return () => {
+      document.removeEventListener("scroll", listener)
+    }
+
+  }, [onTop])
 
   return (
     <LayoutComponent>
@@ -16,7 +36,7 @@ export default function Home() {
       <div className="container mx-auto flex flex-col">
         {/* <FrontMan /> */}
 
-        <CardOne/>
+        <CardOne onTop={ onTop }/>
 
         <AboutCard />
         <div className="p-1"></div>

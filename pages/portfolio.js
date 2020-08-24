@@ -1,6 +1,6 @@
 import LayoutComponent from "../components/layout";
 import Head from "next/head";
-import AboutCard from "../components/cards/aboutCard";
+import Card from "../components/card";
 
 export default function About() {
   return (
@@ -8,8 +8,10 @@ export default function About() {
       <Head>
         <title>RANE GILLIAN | Portfolio</title>
       </Head>
-      <div className="container mx-auto">
-        <AboutCard />
+      <div className="container mx-auto flex flex-col">
+        <Card>
+          <h6 className="text-center text-accent-light">Coming Soon!</h6>
+        </Card>
       </div>
     </LayoutComponent>
   );

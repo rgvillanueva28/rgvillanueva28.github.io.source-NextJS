@@ -8,7 +8,7 @@ export default function About() {
       <Head>
         <title>RANE GILLIAN | About</title>
       </Head>
-      <div className="container mx-auto">
+      <div className="container mx-auto flex flex-col">
         <AboutCard />
       </div>
     </LayoutComponent>

@@ -8,7 +8,7 @@ export default function Contact() {
       <Head>
         <title>RANE GILLIAN | Contact</title>
       </Head>
-      <div>
+      <div className="container mx-auto flex flex-col">
         <ContactCard />
       </div>
     </LayoutComponent>

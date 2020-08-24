@@ -14,29 +14,29 @@ export default function AboutCard() {
       </div>
       <div className="text-center md:text-left md:flex md:flex-1 md:flex-wrap justify-between">
         <div className="p-1">
-          <h4 className="text-xl sm:text-2xl xl:text-4xl">
+          <h4 className="text-xl sm:text-2xl xl:text-4xl text-foreground">
             <strong>Rane Gillian Villanueva</strong>
           </h4>
-          <p className="text-gray-600">
-            <MdSchool className="inline text-black mr-1 my-auto" />
+          <p className="text-accent-light">
+            <MdSchool className="inline text-accent-light mr-1 my-auto" />
             B.S. Computer Engineering
           </p>
-          <p className="text-gray-600">
-            <FaBuilding className="inline text-black mr-1 my-auto" />
+          <p className="text-accent-light">
+            <FaBuilding className="inline text-accent-light mr-1 my-auto" />
             Mapúa University
           </p>
-          <p className="text-gray-600">
-            <FaRegCalendar className="inline text-black mr-1 my-auto" />
+          <p className="text-accent-light">
+            <FaRegCalendar className="inline text-accent-light mr-1 my-auto" />
             2018 - present
           </p>
-          <p className="text-gray-600">
-            <MdMail className="inline text-black mr-1 my-auto" />
+          <p className="text-accent-light">
+            <MdMail className="inline text-accent-light mr-1 my-auto" />
             rgvillanueva28@gmail.com
           </p>
         </div>
         <div className="p-1 my-auto">
           <Link href="/contact">
-            <button className="transition duration-300 ease-in-out p-2 px-4 bg-red-600 rounded-lg text-white border-2 border-transparent hover:bg-red-500 hover:border-red-600 focus:outline-none">
+            <button className="transition duration-200 ease-in-out py-2 px-4 bg-transparent rounded-md text-accent-light border-2 border-accent-light hover:bg-accent-light hover:text-foreground focus:outline-none mr-auto mt-5">
               <a>Contact</a>
             </button>
           </Link>

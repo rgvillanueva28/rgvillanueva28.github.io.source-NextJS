@@ -5,6 +5,10 @@
   src: url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
 }
 
+body {
+  background-color: theme("colors.dark")
+}
+
 h1 {
   @apply text-6xl;
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function CardOne({onTop}) {
+export default function CardOne({ onTop }) {
   return (
     <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-32 rounded-md lg:flex lg:flex-row min-h-screen">
       {/* <img
@@ -23,7 +23,7 @@ export default function CardOne({onTop}) {
           I have also created several projects. Check out the portfolio tab for more information about these projects.
         </p>
         <Link href="/contact">
-          <button className={"transition duration-200 ease-in-out py-2 px-4 bg-transparent rounded-md text-accent-light border-2 border-accent-light hover:bg-accent-light hover:text-foreground focus:outline-none mr-auto mt-5 " + (onTop ? "animate-bounce": "")}>
+          <button className={"transition duration-200 ease-in-out py-2 px-4 bg-transparent rounded-md text-accent-light border-2 border-accent-light hover:bg-accent-light hover:text-foreground focus:outline-none mr-auto mt-5 " + (onTop ? "animate-bounce hover:animate-none": "")}>
             Contact
           </button>
         </Link>

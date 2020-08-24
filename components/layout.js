@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Header from "../components/header";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Children, cloneElement } from "react";
 
 export default function LayoutComponent({ children }) {
   let listener = null;
   const [onTop, setOnTop] = useState(true);
 
-  useEffect( () => {
+  useEffect(() => {
     listener = document.addEventListener("scroll", e => {
       var scrolled = document.scrollingElement.scrollTop
       if (scrolled >= 60) {
@@ -24,7 +24,7 @@ export default function LayoutComponent({ children }) {
   }, [onTop])
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -38,9 +38,7 @@ export default function LayoutComponent({ children }) {
       </Head>
       <Header onTop={onTop} />
 
-      <div className="">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }

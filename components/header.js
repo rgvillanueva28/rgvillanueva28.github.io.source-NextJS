@@ -2,27 +2,14 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaBars, FaCaretUp } from "react-icons/fa";
 import { Spring, Transition, animated } from "react-spring/renderprops.cjs";
-
-const pages = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Portfolio",
-    href: "/portfolio",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import sections from "./sections"
 
 export default function Header(props) {
+
+  const scrollToTop = () => {
+    scroll.scrollToTop({duration:500});
+  };
 
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -32,18 +19,19 @@ export default function Header(props) {
       className={
         "fixed w-full lg:px-16 px-6 lg:py-0 py-2 flex flex-wrap items-center " +
         (toggleMenu ? "bg-accent-dark" : (props.onTop ? "bg-transparent" : "bg-accent-dark"))
-        
+
       }
     >
       {/* left part */}
       <div className="flex-1 flex justify-between items-center text-foreground">
-        <Link href="#">
+        <Link href="/">
           <a className="fill-current">
             <img
               className="bg-foreground rounded-full"
               src="/logo.png"
               width="32"
               height="32"
+              onClick={scrollToTop}
             />
           </a>
         </Link>
@@ -108,16 +96,44 @@ export default function Header(props) {
           >
             <nav className={toggleMenu ? "visible" : "invisible lg:visible"}>
               <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
-                {pages.map(({ label, href }) => (
+                <Link href="/" scroll={false}>
+                    <ScrollLink
+                      activeClass="border-foreground"
+                      to="home"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                      onClick={() => setToggleMenu(false)}
+                      className="cursor-pointer transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-foreground hover:bg-accent-light"
+                    >
+                      Home
+                    </ScrollLink>
+                </Link>
+                {sections.map(({ label, id }) => (
                   <li key={label}>
-                    <Link href={href}>
+                        <ScrollLink
+                          href={"#" + id}
+                          activeClass="border-foreground"
+                          to={id}
+                          spy={true}
+                          hashSpy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={() => setToggleMenu(false)}
+                          className="cursor-pointer transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-foreground hover:bg-accent-light"
+                        >
+                          {label}
+                        </ScrollLink>
+
+
+                    {/* <Link href={href}>
                       <a
                         className="transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-foreground hover:bg-accent-light"
                         onClick={() => setToggleMenu(false)}
                       >
                         {label}
                       </a>
-                    </Link>
+                    </Link> */}
                   </li>
                 ))}
               </ul>

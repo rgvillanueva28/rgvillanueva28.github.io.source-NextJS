@@ -37,7 +37,6 @@ export default function LayoutComponent({ children }) {
         ></link>
       </Head>
       <Header onTop={onTop} />
-
       {children}
     </div>
   );

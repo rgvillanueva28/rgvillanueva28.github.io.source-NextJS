@@ -30,4 +30,7 @@ module.exports = {
     animation: ['responsive', 'hover', 'focus'],
   },
   plugins: [],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 };

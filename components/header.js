@@ -112,7 +112,7 @@ export default function Header(props) {
                 {sections.map(({ label, id }) => (
                   <li key={label}>
                         <ScrollLink
-                          href={"#" + id}
+                          href={"/#" + id}
                           activeClass="border-foreground"
                           to={id}
                           spy={true}

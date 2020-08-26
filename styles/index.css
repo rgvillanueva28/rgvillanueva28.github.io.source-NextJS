@@ -40,12 +40,6 @@ header {
   transition: background-color 250ms linear;
 }
 
-#scrollToTop {
-  -webkit-transition: visibility 250ms linear;
-  -ms-transition: visibility 250ms linear;
-  transition: visibility 250ms linear;
-}
-
 @tailwind components;
 
 @tailwind utilities;

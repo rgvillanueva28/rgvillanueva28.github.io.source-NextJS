@@ -11,11 +11,12 @@ export default function MyApp({ Component, pageProps, router }) {
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.3,
+        staggerChildren: 0.05,
+        delayChildren: 0.2
       },
     }
   }}>
-    <Component {...pageProps} />;
+    <Component {...pageProps} />
   </motion.div>
   )
 }

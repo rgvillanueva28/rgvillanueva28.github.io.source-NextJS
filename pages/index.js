@@ -68,12 +68,15 @@ export default function Home() {
           onTop
             ? {
                 opacity: 0,
+                y: -5,
               }
             : {
                 opacity: 1,
-                transition:{
-                  ease:"easeInOut"
-                }
+                y: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 1000,
+                },
               }
         }
         className="fixed bottom-0 right-0 "

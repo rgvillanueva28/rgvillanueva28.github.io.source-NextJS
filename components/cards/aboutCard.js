@@ -36,9 +36,9 @@ export default function AboutCard() {
         </div>
         <div className="p-1 my-auto">
           <Link href="/contact">
-            <button className="transition duration-200 ease-in-out py-2 px-4 bg-transparent rounded-md text-accent-light border-2 border-accent-light hover:bg-accent-light hover:text-foreground focus:outline-none mr-auto mt-5">
-              <a>Contact</a>
-            </button>
+            <a className="transition duration-200 ease-in-out py-2 px-4 bg-transparent rounded-md text-accent-light border-2 border-accent-light hover:bg-accent-light hover:text-foreground focus:outline-none mr-auto mt-5">
+              Contact
+            </a>
           </Link>
         </div>
       </div>

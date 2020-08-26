@@ -21,8 +21,8 @@ export default function CardOne({ onTop }) {
       scale: [1, 1, 1],
     },
     notTop: {
-      y: 0,
-      scale: 1,
+      y: [0,0,0],
+      scale: [1,1,1],
     },
   };
 

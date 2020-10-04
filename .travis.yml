@@ -11,7 +11,7 @@ script:
 
 after_success:
   - touch out/.nojekyll
-  - echo "www.ranegillian.me" > CNAME
+  - echo "www.ranegillian.me" > out/CNAME
 
 deploy:
   provider: pages

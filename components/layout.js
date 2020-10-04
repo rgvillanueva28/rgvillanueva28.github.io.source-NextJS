@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Header from "../components/header";
 
-import { useState, useEffect, Children, cloneElement } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function LayoutComponent({ children }) {
   let listener = null;
@@ -36,26 +36,35 @@ export default function LayoutComponent({ children }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Header onTop={onTop} />
-      <motion.div
-        initial="pageInitial"
-        animate="pageAnimate"
-        variants={{
-          pageInitial: {
-            opacity: 0,
-          },
-          pageAnimate: {
-            opacity: 1,
-            transition: {
-              when: "beforeChildren",
-              staggerChildren: 0.05,
-              delayChildren: 0.2,
-            },
-          },
+      <AnimatePresence
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1,
+          type: "spring",
+          stiffness: 300,
         }}
       >
-        {children}
-      </motion.div>
+        <Header onTop={onTop} />
+        <motion.div
+          key="header"
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+              transition: {
+                duration: 1,
+              },
+            },
+          }}
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

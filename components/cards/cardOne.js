@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
-import { BiShocked } from "react-icons/bi";
 
 export default function CardOne({ onTop }) {
   const motionDiv = {
@@ -19,10 +18,17 @@ export default function CardOne({ onTop }) {
     top: {
       y: [0, -10, 0],
       scale: [1, 1, 1],
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+        times: [0, 0.5, 1],
+        loop: Infinity,
+        repeatDelay: 0.2,
+      },
     },
     notTop: {
-      y: [0,0,0],
-      scale: [1,1,1],
+      y: [0, 0, 0],
+      scale: [1, 1, 1],
     },
   };
 
@@ -59,8 +65,8 @@ export default function CardOne({ onTop }) {
               transition: {
                 delay: 1,
                 type: "spring",
-                stiffness: 1000
-              }
+                stiffness: 1000,
+              },
             },
           }}
         >
@@ -112,13 +118,6 @@ export default function CardOne({ onTop }) {
         <motion.button
           animate={onTop ? "top" : "notTop"}
           variants={buttons}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            times: [0, 0.5, 1],
-            loop: Infinity,
-            repeatDelay: 0.2,
-          }}
           className={
             "cursor-pointer mr-auto py-2 px-4 bg-transparent rounded-md text-accent-light border-2 border-accent-light hover:bg-accent-light hover:text-foreground focus:outline-none " +
             // (onTop ? "animate-bounce hover:animate-none" : "")

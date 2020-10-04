@@ -36,35 +36,30 @@ export default function LayoutComponent({ children }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <AnimatePresence
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 1,
-          type: "spring",
-          stiffness: 300,
+      <Header onTop={onTop} />
+      <motion.div
+        key="mainContainer"
+        initial="pageInitial"
+        animate="pageAnimate"
+        variants={{
+          pageInitial: {
+            opacity: 0,
+            y: -100,
+          },
+          pageAnimate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              delay: 0.25,
+              type: "spring",
+              stiffness: 500
+            },
+          },
         }}
       >
-        <Header onTop={onTop} />
-        <motion.div
-          key="header"
-          initial="pageInitial"
-          animate="pageAnimate"
-          variants={{
-            pageInitial: {
-              opacity: 0,
-            },
-            pageAnimate: {
-              opacity: 1,
-              transition: {
-                duration: 1,
-              },
-            },
-          }}
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
+        {children}
+      </motion.div>
     </div>
   );
 }

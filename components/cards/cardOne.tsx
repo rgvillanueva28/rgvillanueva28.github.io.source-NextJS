@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
 
-export default function CardOne({ onTop }) {
+export default function CardOne({ onTop }: any) {
   const motionDiv = {
     visible: {
       opacity: 1,
@@ -35,19 +35,19 @@ export default function CardOne({ onTop }) {
   const rgv = Array.from("Rane Gillian.");
 
   return (
-    <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-32 rounded-md lg:flex lg:flex-row min-h-screen justify-center">
+    <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-24 rounded-md lg:flex lg:flex-row min-h-screen justify-center">
       {/* <img
         src="/logo.png"
         className="w-24 md:w-48 xl:w-64 mx-auto mb-5 rounded-full bg-gray-500"
       /> */}
       {/* <div className="text-left  pt-5 lg:pt-0 min-h-full lg:justify-center lg:flex lg:flex-col"> */}
       <motion.div
-        className="text-left lg:pt-0 min-h-full lg:justify-center lg:flex lg:flex-col lg:mr-64 lg:pr-20"
+        className="text-left lg:pt-0 min-h-full lg:justify-center lg:flex lg:flex-col lg:mr-64 lg:pr-20 xl:pr-32"
         initial="hidden"
         animate="visible"
         variants={motionDiv}
       >
-        <p className="text-accent-light text-base">
+        <p className="text-accent-light text-base lg:text-lg">
           <strong>Hi there! I am</strong>
         </p>
         <motion.div
@@ -76,7 +76,6 @@ export default function CardOne({ onTop }) {
             ) : (
               <motion.strong
                 key={index}
-                width={"auto"}
                 whileHover={{
                   y: -2,
                   color: "#8DA9C4",
@@ -85,7 +84,7 @@ export default function CardOne({ onTop }) {
                     stiffness: 1500,
                   },
                 }}
-                className="cursor-pointer text-foreground text-2xl md:text-2xl lg:text-4xl text-left"
+                className="cursor-pointer text-foreground text-4xl md:text-4xl lg:text-5xl xl:text-6xl text-left"
               >
                 {rgv}
               </motion.strong>
@@ -93,20 +92,27 @@ export default function CardOne({ onTop }) {
           )}
         </motion.div>
 
-        <p className="text-foreground mb-3 text-2xl md:text-2xl lg:text-4xl">
+        <p className="text-foreground mb-3 text-2xl md:text-2xl lg:text-4xl xl:text-5xl">
           <strong>Aspiring Developer.</strong>
         </p>
-        <p className="text-accent-light text-base mb-5">
+        <p className="text-accent-light text-base lg:text-lg mb-5">
           I am currently a Bachelor of Science in Computer Engineering student
           at Mapúa University. I am interested to learn the fields of
           Cybersecurity, Web Development, Mobile Development, Data Analysis and
           Visualization, and Artificial Intelligence. I have also created
           several projects. Check out the{" "}
-          <Link href="/portfolio">
+          <ScrollLink
+            href="/#portfolio"
+            activeClass="border-foreground"
+            to="portfolio"
+            smooth={true}
+            duration={500}
+            // onClick={() => setToggleMenu(false)}
+          >
             <a className="text-foreground opacity-100 hover:opacity-75">
               portfolio
             </a>
-          </Link>{" "}
+          </ScrollLink>{" "}
           tab for more information about these projects.
         </p>
         {/* <Link href="#contact">
@@ -128,8 +134,6 @@ export default function CardOne({ onTop }) {
             href="#contact"
             activeClass="border-foreground"
             to="contact"
-            spy={true}
-            hashSpy={true}
             smooth={true}
             duration={500}
             ignoreCancelEvents={true}

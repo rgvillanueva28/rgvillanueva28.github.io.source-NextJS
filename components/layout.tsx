@@ -4,13 +4,13 @@ import Header from "../components/header";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function LayoutComponent({ children }) {
-  let listener = null;
+export default function LayoutComponent({ children }: any) {
+  let listener: any= null;
   const [onTop, setOnTop] = useState(true);
 
   useEffect(() => {
     listener = document.addEventListener("scroll", (e) => {
-      var scrolled = document.scrollingElement.scrollTop;
+      var scrolled: any = document.scrollingElement?.scrollTop;
       if (scrolled >= 60) {
         setOnTop(false);
       } else {

@@ -28,6 +28,7 @@ module.exports = {
   },
   variants: {
     animation: ['responsive', 'hover', 'focus'],
+    borderRadius: ['responsive', 'hover', 'focus'],
   },
   plugins: [],
   future: {

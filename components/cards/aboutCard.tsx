@@ -5,7 +5,7 @@ import Card from "../card";
 
 export default function AboutCard() {
   return (
-    <Card className="md:flex md:flex-wrap bg-black">
+    <Card className="md:flex md:flex-wrap bg-black h-auto">
       <div>
         <img
           src="/logo.png"
@@ -34,13 +34,13 @@ export default function AboutCard() {
             rgvillanueva28@gmail.com
           </p>
         </div>
-        <div className="p-1 my-auto">
+        {/* <div className="p-1 my-auto">
           <Link href="/contact">
             <a className="transition duration-200 ease-in-out py-2 px-4 bg-transparent rounded-md text-accent-light border-2 border-accent-light hover:bg-accent-light hover:text-foreground focus:outline-none mr-auto mt-5">
               Contact
             </a>
           </Link>
-        </div>
+        </div> */}
       </div>
     </Card>
   );

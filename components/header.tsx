@@ -7,7 +7,7 @@ import sections from "./sections";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Header(props) {
+export default function Header(props: any) {
   const scrollToTop = () => {
     scroll.scrollToTop({ duration: 500 });
   };
@@ -26,12 +26,17 @@ export default function Header(props) {
           : "bg-accent-dark")
       }
     >
-      {/* left part */}
-      <div className="flex-1 flex justify-between items-center text-foreground">
+      <div className="flex-1 flex justify-between items-center">
         <Link href="/">
           <a className="fill-current">
-            <img
-              className="bg-foreground rounded-full"
+            <motion.img
+              initial={{ backgroundColor: "#EEF4ED" }}
+              whileHover={{ backgroundColor: "#8DA9C4" }}
+              transition={{
+                type: "tween",
+                duration: 0.3,
+              }}
+              className="rounded-full"
               src="/logo.png"
               width="32"
               height="32"
@@ -40,13 +45,19 @@ export default function Header(props) {
           </a>
         </Link>
         <div className="m-0 mr-auto p-0 pl-1 my-auto">
-          <h1 className="ranegillian text-2xl text-foreground">
+          <motion.h1
+            initial={{ color: "#EEF4ED" }}
+            className="ranegillian text-2xl cursor-default"
+            whileHover={{ color: "#8DA9C4" }}
+            transition={{
+              type: "tween",
+              duration: 0.3,
+            }}
+          >
             <strong>RANE</strong>GILLIAN
-          </h1>
+          </motion.h1>
         </div>
       </div>
-
-      {/* responsive */}
 
       <div
         className="transition duration-200 cursor-pointer lg:hidden  focus:outline-none hover:bg-accent-light border border-transparent hover:border-foreground rounded-md p-1 py-3 relative"
@@ -65,15 +76,7 @@ export default function Header(props) {
             </div>
           )}
         </div>
-
-        {/* {toggleMenu ? (
-          <FaCaretUp color="white" size="32" />
-        ) : (
-          <FaBars color="white" size="32" />
-        )} */}
       </div>
-
-      {/* right part */}
       <Spring
         native
         force
@@ -91,19 +94,20 @@ export default function Header(props) {
           >
             <nav className={toggleMenu ? "visible" : "invisible lg:visible"}>
               <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
-                <Link href="/" scroll={false}>
-                  <ScrollLink
-                    activeClass="border-foreground"
-                    to="home"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    onClick={() => setToggleMenu(false)}
-                    className="cursor-pointer transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-foreground hover:bg-accent-light"
-                  >
-                    Home
-                  </ScrollLink>
-                </Link>
+                <li>
+                    <ScrollLink
+                      href="/"
+                      activeClass="border-foreground"
+                      to="home"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                      onClick={() => setToggleMenu(false)}
+                      className="cursor-pointer transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-foreground hover:bg-accent-light"
+                    >
+                      Home
+                    </ScrollLink>
+                </li>
                 {sections.map(({ label, id }) => (
                   <li key={label}>
                     <ScrollLink
@@ -119,15 +123,6 @@ export default function Header(props) {
                     >
                       {label}
                     </ScrollLink>
-
-                    {/* <Link href={href}>
-                      <a
-                        className="transition duration-200 lg:py-4 py-3 px-5 block border-b-2 border-transparent hover:border-foreground hover:bg-accent-light"
-                        onClick={() => setToggleMenu(false)}
-                      >
-                        {label}
-                      </a>
-                    </Link> */}
                   </li>
                 ))}
               </ul>

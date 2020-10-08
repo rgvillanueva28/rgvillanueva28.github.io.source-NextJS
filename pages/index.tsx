@@ -43,27 +43,32 @@ export default function Home() {
       <div className="container mx-auto flex flex-col">
         {/* <FrontMan /> */}
 
-        <section id="home">
-          <CardOne onTop={onTop} />
+        <section id="home" className="">
+          <div className="min-h-screen pt-20 flex flex-col justify-center items-center">
+            <CardOne onTop={onTop} />
+
+            <ScrollToButton href="/#about" to="about" />
+          </div>
         </section>
 
         <section id="about" className="min-h-screen pt-20">
-          <div>
-            <h3 className="text-foreground text-center pb-5">About me</h3>
-          </div>
+          <h3 className="text-accent-light text-center pb-5">About me</h3>
           <AboutCard />
           <ScrollToButton href="/#portfolio" to="portfolio" />
         </section>
 
         <section id="portfolio" className="min-h-screen pt-20">
+          <h3 className="text-accent-light text-center pb-5">Portfolio</h3>
           <Card>
             <h6 className="text-center text-accent-light">Coming Soon!</h6>
           </Card>
-          
+
           <ScrollToButton href="/#contact" to="contact" />
         </section>
 
         <section id="contact" className="min-h-screen pt-20">
+          <h3 className="text-accent-light text-center pb-5">Contact</h3>
+
           <ContactCard />
         </section>
       </div>

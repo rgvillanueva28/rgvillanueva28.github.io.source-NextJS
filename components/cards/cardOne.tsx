@@ -35,7 +35,7 @@ export default function CardOne({ onTop }: any) {
   const rgv = Array.from("Rane Gillian.");
 
   return (
-    <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-24 rounded-md lg:flex lg:flex-row min-h-screen justify-center">
+    <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-24 mt-5 rounded-md lg:flex lg:flex-row">
       {/* <img
         src="/logo.png"
         className="w-24 md:w-48 xl:w-64 mx-auto mb-5 rounded-full bg-gray-500"
@@ -109,9 +109,9 @@ export default function CardOne({ onTop }: any) {
             duration={500}
             // onClick={() => setToggleMenu(false)}
           >
-            <a className="text-foreground opacity-100 hover:opacity-75">
+            <span className="text-foreground opacity-100 hover:opacity-75">
               portfolio
-            </a>
+            </span>
           </ScrollLink>{" "}
           tab for more information about these projects.
         </p>

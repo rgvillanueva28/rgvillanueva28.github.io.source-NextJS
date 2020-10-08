@@ -4,12 +4,13 @@ import CardOne from "../components/cards/cardOne";
 import AboutCard from "../components/cards/aboutCard";
 import ContactCard from "../components/cards/contactCard";
 import Card from "../components/card";
+import ScrollToButton from "../components/scrollToButton";
 
 import { useState, useEffect } from "react";
-import { animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll, Link as ScrollLink } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { BiUpArrow } from "react-icons/bi";
+import { BiUpArrow, BiDownArrow } from "react-icons/bi";
 
 export default function Home() {
   const scrollToTop = () => {
@@ -46,17 +47,23 @@ export default function Home() {
           <CardOne onTop={onTop} />
         </section>
 
-        <section id="about" className="min-h-screen">
+        <section id="about" className="min-h-screen pt-20">
+          <div>
+            <h3 className="text-foreground text-center pb-5">About me</h3>
+          </div>
           <AboutCard />
+          <ScrollToButton href="/#portfolio" to="portfolio" />
         </section>
 
-        <section id="portfolio" className="min-h-screen">
+        <section id="portfolio" className="min-h-screen pt-20">
           <Card>
             <h6 className="text-center text-accent-light">Coming Soon!</h6>
           </Card>
+          
+          <ScrollToButton href="/#contact" to="contact" />
         </section>
 
-        <section id="contact" className="min-h-screen">
+        <section id="contact" className="min-h-screen pt-20">
           <ContactCard />
         </section>
       </div>
@@ -82,9 +89,10 @@ export default function Home() {
       >
         <button
           onClick={scrollToTop}
-          className="mb-5 mr-5 px-4 w-auto h-12 bg-accent-mid rounded-full hover:bg-accent-light active:shadow-lg  mouse shadow focus:outline-none border border-dark"
+          className="mb-5 mr-5 px-4  h-16 w-16 bg-accent-mid rounded-full hover:bg-accent-light active:shadow-lg  mouse shadow focus:outline-none border border-dark"
         >
-          <BiUpArrow className="text-foreground" />
+          <BiUpArrow className="text-foreground mx-auto" size={28} />
+          <p className="text-xs text-white">TOP</p>
         </button>
       </motion.div>
     </LayoutComponent>

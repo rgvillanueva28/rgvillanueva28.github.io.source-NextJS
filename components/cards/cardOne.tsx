@@ -47,7 +47,7 @@ export default function CardOne({ onTop }: any) {
         animate="visible"
         variants={motionDiv}
       >
-        <p className="text-accent-light text-base lg:text-lg">
+        <p className="text-accent-light text-base lg:text-lg ">
           <strong>Hi there! I am</strong>
         </p>
         <motion.div
@@ -84,16 +84,15 @@ export default function CardOne({ onTop }: any) {
                     stiffness: 1500,
                   },
                 }}
-                className="cursor-pointer text-foreground text-4xl md:text-4xl lg:text-5xl xl:text-6xl text-left"
-              >
-                {rgv}
+                className="cursor-pointer text-foreground  text-4xl md:text-4xl lg:text-5xl xl:text-6xl text-left"
+              >{rgv}
               </motion.strong>
             )
           )}
         </motion.div>
 
-        <p className="text-foreground mb-3 text-2xl md:text-2xl lg:text-4xl xl:text-5xl">
-          <strong>Aspiring Developer.</strong>
+        <p className="mb-3 text-2xl md:text-2xl lg:text-4xl xl:text-5xl">
+          <strong><span className="gradText">Aspiring Developer.</span></strong>
         </p>
         <p className="text-accent-light text-base lg:text-lg mb-5">
           I am currently a Bachelor of Science in Computer Engineering student

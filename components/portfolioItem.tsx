@@ -12,10 +12,20 @@ export default function PortfolioItem({
       <div className="flex flex-col items-stretch min-h-full bg-accent-dark p-6">
         <h4 className="text-foreground mb-4">{title}</h4>
         <p className="text-accent-light mb-10">{description}</p>
-        <div className="flex space-x-2 text-accent-light text-sm">
+        <div className="flex space-x-2 text-accent-light text-sm mb-4">
           {tags.map((tag: any) => (
             <span className="bg-accent-mid rounded-lg p-2">{tag}</span>
           ))}
+        </div>
+        <div className="flex flex-row space-x-4 text-accent-light ml-auto mt-auto">
+          <a href={ghLink} target="_blank" className="hover:text-foreground ">
+            <FaGithub size={28} />
+          </a>
+          {link ? (
+            <a href={link} target="_blank" className="hover:text-foreground ">
+              <FaExternalLinkAlt size={28} />
+            </a>
+          ) : null}
         </div>
       </div>
     </div>

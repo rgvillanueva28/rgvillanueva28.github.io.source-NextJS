@@ -10,7 +10,7 @@ export default function PortfolioCard() {
           title={item.title}
           description={item.description}
           ghLink={item.ghLink}
-          link={item.ghLink}
+          link={item.link}
           tags={item.tags}
         />
       ))}

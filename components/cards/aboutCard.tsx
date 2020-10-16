@@ -5,7 +5,7 @@ import Card from "../card";
 
 export default function AboutCard() {
   return (
-    <Card className="md:flex md:flex-wrap bg-black h-auto">
+    <Card className="md:flex md:flex-wrap h-auto">
       <div>
         <img
           src="/logo.png"

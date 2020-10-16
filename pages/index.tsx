@@ -3,6 +3,7 @@ import LayoutComponent from "../components/layout";
 import CardOne from "../components/cards/cardOne";
 import AboutCard from "../components/cards/aboutCard";
 import ContactCard from "../components/cards/contactCard";
+import PortfolioCard from "../components/cards/portfolioCard";
 import Card from "../components/card";
 import ScrollToButton from "../components/scrollToButton";
 
@@ -52,22 +53,27 @@ export default function Home() {
         </section>
 
         <section id="about" className="min-h-screen pt-20">
-          <h3 className="text-accent-light text-center pb-5">About me</h3>
+          <h3 className="text-accent-light text-center pb-5 font-bold">
+            <span className="gradText">About me</span>
+          </h3>
           <AboutCard />
           <ScrollToButton href="/#portfolio" to="portfolio" />
         </section>
 
         <section id="portfolio" className="min-h-screen pt-20">
-          <h3 className="text-accent-light text-center pb-5">Portfolio</h3>
-          <Card>
-            <h6 className="text-center text-accent-light">Coming Soon!</h6>
-          </Card>
+          <h3 className="text-accent-light text-center pb-5 font-bold">
+            <span className="gradText">Portfolio</span>
+          </h3>
+          {/* <h6 className="text-center text-accent-light">Coming Soon!</h6> */}
+          <PortfolioCard />
 
           <ScrollToButton href="/#contact" to="contact" />
         </section>
 
         <section id="contact" className="min-h-screen pt-20">
-          <h3 className="text-accent-light text-center pb-5">Contact</h3>
+          <h3 className="text-accent-light text-center pb-5 font-bold">
+            <span className="gradText">Contact</span>
+          </h3>
 
           <ContactCard />
         </section>

@@ -1,12 +1,19 @@
 import Card from "../card";
 import PortfolioItem from "../portfolioItem";
+import { items } from "../files/projects";
 
 export default function PortfolioCard() {
-    return (
-        <div className="flex flex-row flex-wrap mx-auto w-11/12 md:w-10/12 lg:w-9/12">
-            <PortfolioItem />
-            <PortfolioItem />
-            <PortfolioItem />
-        </div>
-    )
+  return (
+    <Card className="flex flex-row flex-wrap mx-auto">
+      {items.map((item) => (
+        <PortfolioItem
+          title={item.title}
+          description={item.description}
+          ghLink={item.ghLink}
+          link={item.ghLink}
+          tags={item.tags}
+        />
+      ))}
+    </Card>
+  );
 }

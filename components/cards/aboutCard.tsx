@@ -8,7 +8,9 @@ export default function AboutCard() {
     <Card className="md:flex md:flex-wrap h-auto">
       <div>
         <img
-        alt="RG Logo"
+          alt="RG Logo"
+          width="128"
+          height="128"
           src="/logo.png"
           className="w-24 md:w-32 xl:w-40 md:mr-5 mx-auto mb-5 md:mb-0 bg-gray-500 rounded-full "
         />

@@ -32,10 +32,6 @@ export default function LayoutComponent({ children }: any) {
           name="description"
           content="Personal website of Rane Gillian created with Next.JS"
         />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        ></link>
       </Head>
       <Header onTop={onTop} />
       <motion.div

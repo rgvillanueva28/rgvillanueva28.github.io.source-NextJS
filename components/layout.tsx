@@ -32,6 +32,8 @@ export default function LayoutComponent({ children }: any) {
           name="description"
           content="Personal website of Rane Gillian created with Next.JS"
         />
+        <meta name="theme-color" content="#134074" />
+        <link rel='apple-touch-icon' href='/logo.png'></link>
       </Head>
       <Header onTop={onTop} />
       <motion.div

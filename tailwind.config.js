@@ -1,6 +1,6 @@
 module.exports = {
   important: true,
-  purge: ["./**/*.html", "./**/*.jsx"],
+  purge: ["./**/*.html", "./**/*.{tsx,js,jsx}"],
   theme: {
     extend: {},
     container: {
@@ -14,8 +14,8 @@ module.exports = {
       xxl: "1560px",
     },
     fontFamily: {
-      display: ['Roboto'],
-      body: ['Roboto']
+      display: ["Roboto"],
+      body: ["Roboto"],
     },
     extend: {
       colors: {

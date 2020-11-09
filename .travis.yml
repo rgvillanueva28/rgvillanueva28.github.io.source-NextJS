@@ -11,9 +11,9 @@ script:
 
 after_success:
   - touch out/.nojekyll
-  - echo "www.ranegillian.me" > out/CNAME
 
 deploy:
+  fqdn: www.ranegillian.me
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN

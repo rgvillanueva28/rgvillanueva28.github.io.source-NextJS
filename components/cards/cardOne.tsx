@@ -36,11 +36,6 @@ export default function CardOne({ onTop }: any) {
 
   return (
     <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-24 mt-5 rounded-md lg:flex lg:flex-row">
-      {/* <img
-        src="/logo.png"
-        className="w-24 md:w-48 xl:w-64 mx-auto mb-5 rounded-full bg-gray-500"
-      /> */}
-      {/* <div className="text-left  pt-5 lg:pt-0 min-h-full lg:justify-center lg:flex lg:flex-col"> */}
       <motion.div
         className="text-left lg:pt-0 min-h-full lg:justify-center lg:flex lg:flex-col lg:mr-64 lg:pr-20 xl:pr-32"
         initial="hidden"
@@ -85,14 +80,17 @@ export default function CardOne({ onTop }: any) {
                   },
                 }}
                 className="cursor-pointer text-foreground  text-4xl md:text-4xl lg:text-5xl xl:text-6xl text-left"
-              >{rgv}
+              >
+                {rgv}
               </motion.strong>
             )
           )}
         </motion.div>
 
         <p className="mb-3 text-2xl md:text-2xl lg:text-4xl xl:text-5xl">
-          <strong><span className="gradText">Aspiring Developer.</span></strong>
+          <strong>
+            <span className="gradText">Aspiring Developer.</span>
+          </strong>
         </p>
         <p className="text-accent-light text-base lg:text-lg mb-5">
           I am currently a Bachelor of Science in Computer Engineering student
@@ -141,7 +139,6 @@ export default function CardOne({ onTop }: any) {
           </ScrollLink>
         </motion.button>
       </motion.div>
-      {/* <img className="mx-5 pt-10 sm:mx-10 md:mx-16 lg:w-screen min-h-full" src="/landingImage.svg" /> */}
     </div>
   );
 }

@@ -1,12 +1,7 @@
 @import "tailwindcss/base";
 
-@font-face {
-  font-family: Roboto;
-  src: url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
-}
-
 body {
-  background-color: theme("colors.dark")
+  background-color: theme("colors.dark");
 }
 
 h1 {
@@ -38,6 +33,40 @@ header {
   -webkit-transition: background-color 250ms linear;
   -ms-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
+}
+
+.gradText {
+  background: linear-gradient(270deg, #eef4ed, #134074);
+  background-size: 300% 300%;
+
+  -webkit-animation: AnimationName 7s ease infinite;
+  animation: AnimationName 7s ease infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @import "tailwindcss/components";

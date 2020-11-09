@@ -14,15 +14,15 @@ export default function PortfolioItem({
         <p className="text-accent-light mb-10">{description}</p>
         <div className="text-accent-light text-sm mb-4">
           {tags.map((tag: any) => (
-            <span className="inline-block bg-accent-mid rounded-lg p-2 mr-2 mb-2">{tag}</span>
+            <span key={tag} className="inline-block bg-accent-mid rounded-lg p-2 mr-2 mb-2">{tag}</span>
           ))}
         </div>
         <div className="flex flex-row space-x-4 text-accent-light ml-auto mt-auto">
-          <a href={ghLink} target="_blank" className="hover:text-foreground ">
+          <a href={ghLink} target="_blank" rel="noreferrer noopener" className="hover:text-foreground ">
             <FaGithub size={28} />
           </a>
           {link ? (
-            <a href={link} target="_blank" className="hover:text-foreground ">
+            <a href={link} target="_blank" rel="noreferrer noopener" className="hover:text-foreground ">
               <FaExternalLinkAlt size={28} />
             </a>
           ) : null}

@@ -1,6 +1,6 @@
 module.exports = {
   important: true,
-  purge: [],
+  purge: ["./**/*.html", "./**/*.jsx"],
   theme: {
     extend: {},
     container: {
@@ -13,6 +13,10 @@ module.exports = {
       xl: "1280px",
       xxl: "1560px",
     },
+    fontFamily: {
+      display: ['Roboto'],
+      body: ['Roboto']
+    },
     extend: {
       colors: {
         dark: "#0B2545",
@@ -22,16 +26,16 @@ module.exports = {
           mid: "#134074",
         },
         foreground: "#EEF4ED",
-      }
+      },
     },
-
   },
   variants: {
-    animation: ['responsive', 'hover', 'focus'],
-    borderRadius: ['responsive', 'hover', 'focus'],
+    animation: ["responsive", "hover", "focus"],
+    borderRadius: ["responsive", "hover", "focus"],
   },
   plugins: [],
   future: {
     removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
 };

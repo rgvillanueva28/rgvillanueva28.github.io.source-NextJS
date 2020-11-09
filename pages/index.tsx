@@ -4,14 +4,13 @@ import CardOne from "../components/cards/cardOne";
 import AboutCard from "../components/cards/aboutCard";
 import ContactCard from "../components/cards/contactCard";
 import PortfolioCard from "../components/cards/portfolioCard";
-import Card from "../components/card";
 import ScrollToButton from "../components/scrollToButton";
 
 import { useState, useEffect } from "react";
 import { animateScroll as scroll, Link as ScrollLink } from "react-scroll";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion,  } from "framer-motion";
 
-import { BiUpArrow, BiDownArrow } from "react-icons/bi";
+import { BiUpArrow,  } from "react-icons/bi";
 
 export default function Home() {
   const scrollToTop = () => {

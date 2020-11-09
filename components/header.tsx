@@ -37,6 +37,7 @@ export default function Header(props: any) {
                 duration: 0.3,
               }}
               className="rounded-full"
+              alt="RG Logo"
               src="/logo.png"
               width="32"
               height="32"

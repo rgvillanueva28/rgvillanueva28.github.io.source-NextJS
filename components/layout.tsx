@@ -26,7 +26,8 @@ export default function LayoutComponent({ children }: any) {
   return (
     <div className="">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/ico" sizes="16x16" />
+        <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
           content="Personal website of Rane Gillian created with Next.JS"

@@ -8,7 +8,7 @@ function ContactCard() {
       <div className="mx-auto text-center inline-flex ">
         <div className="container inline">
           <div className="inline-block mx-2 bg-blue-700 rounded-full border-0">
-            <a href="https://www.facebook.com/ranegillian/" target="_blank">
+            <a href="https://www.facebook.com/ranegillian/" rel="noreferrer noopener" target="_blank">
               <FaFacebookF size={64} className="inline text-white p-2" />
             </a>
           </div>
@@ -16,7 +16,7 @@ function ContactCard() {
         </div>
         <div className="container inline">
           <div className="inline-block mx-2 bg-blue-600 rounded-full border-0">
-            <a href="https://www.linkedin.com/in/ranegv/" target="_blank">
+            <a href="https://www.linkedin.com/in/ranegv/" rel="noreferrer noopener" target="_blank">
               <FaLinkedinIn size={64} className="inline text-white p-2" />
             </a>
           </div>
@@ -24,7 +24,7 @@ function ContactCard() {
         </div>
         <div className="container inline">
           <div className="inline-block mx-2 bg-white rounded-full">
-            <a href="https://github.com/rgvillanueva28" target="_blank">
+            <a href="https://github.com/rgvillanueva28" rel="noreferrer noopener" target="_blank">
               <FaGithub size={64} className="inline  text-black" />
             </a>
           </div>

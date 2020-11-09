@@ -7,6 +7,7 @@ export default function PortfolioCard() {
     <Card className="flex flex-row flex-wrap mx-auto">
       {items.map((item) => (
         <PortfolioItem
+          key={item.title}
           title={item.title}
           description={item.description}
           ghLink={item.ghLink}

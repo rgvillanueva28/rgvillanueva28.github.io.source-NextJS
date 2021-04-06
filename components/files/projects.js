@@ -25,16 +25,25 @@ export const items = [
     title: "Mapua GWA Calculator",
     description:
       "🧮 A calculator for computing GWA. For the students who hopes to have scholarships.",
-    ghLink: "https://github.com/rgvillanueva28/random-trash-and-shits/tree/mapuaGwaCalcu",
-    link: "https://www.ranegillian.me/random-trash-and-shits/",
+    ghLink:
+      "https://github.com/rgvillanueva28/random-mini-projects/tree/mapuaGwaCalcu",
+    link: "https://www.ranegillian.me/random-mini-projects/",
     tags: ["HTML", "TailwindCSS", "Vanilla JS"],
   },
   {
     title: "Personal Website",
-    description:
-      "🕸 My personal website created with Next.JS and TailwindCSS",
-    ghLink: "https://github.com/rgvillanueva28/random-trash-and-shits/tree/mapuaGwaCalcu",
-    link: "https://www.ranegillian.me/random-trash-and-shits/",
+    description: "🕸 My personal website created with Next.JS and TailwindCSS",
+    ghLink:
+      "https://github.com/rgvillanueva28/rgvillanueva28.github.io.source-NextJS",
+    link: "https://www.ranegillian.me/",
     tags: ["Next.JS", "React", "TailwindCSS"],
+  },
+  {
+    title: "Personal Blog",
+    description: "📝 My personal blog created with Next.JS and powered by Strapi",
+    ghLink:
+      "https://github.com/rgvillanueva28/rgvillanueva28-blog",
+    link: "https://blog.ranegillian.me/",
+    tags: ["Next.JS", "React", "TailwindCSS", "Strapi"],
   },
 ];

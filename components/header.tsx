@@ -55,7 +55,7 @@ export default function Header(props: any) {
               duration: 0.3,
             }}
           >
-            <strong>RANE</strong>GILLIAN
+            <strong>RANE</strong>VILLANUEVA
           </motion.h1>
         </div>
       </div>

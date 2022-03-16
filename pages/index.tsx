@@ -8,11 +8,15 @@ import ScrollToButton from "../components/scrollToButton";
 
 import { useState, useEffect } from "react";
 import { animateScroll as scroll, Link as ScrollLink } from "react-scroll";
-import { motion,  } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { BiUpArrow,  } from "react-icons/bi";
+import { BiUpArrow } from "react-icons/bi";
 
-export default function Home() {
+import { GetStaticProps } from "next";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+export default function Home({ portfolio }: any) {
   const scrollToTop = () => {
     scroll.scrollToTop({ duration: 500 });
   };
@@ -38,7 +42,7 @@ export default function Home() {
   return (
     <LayoutComponent>
       <Head>
-        <title>RANE GILLIAN</title>
+        <title>Rane Villanueva</title>
       </Head>
       <div className="container mx-auto flex flex-col">
         {/* <FrontMan /> */}
@@ -64,7 +68,7 @@ export default function Home() {
             <span className="gradText">Portfolio</span>
           </h3>
           {/* <h6 className="text-center text-accent-light">Coming Soon!</h6> */}
-          <PortfolioCard />
+          <PortfolioCard portfolio={portfolio} />
 
           <ScrollToButton href="/#contact" to="contact" />
         </section>
@@ -108,3 +112,20 @@ export default function Home() {
     </LayoutComponent>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  let portfolio: any | undefined = await fetch(
+    `${API_URL}/api/portfolios?populate=%2A`
+  );
+  portfolio = await portfolio.json();
+  portfolio = portfolio?.data;
+
+  // console.log(portfolio);
+
+  return {
+    props: {
+      portfolio,
+    },
+    revalidate: 60,
+  };
+};

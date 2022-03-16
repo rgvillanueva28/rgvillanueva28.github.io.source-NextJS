@@ -18,7 +18,7 @@ export default function AboutCard() {
       <div className="text-center md:text-left md:flex md:flex-1 md:flex-wrap justify-between">
         <div className="p-1">
           <h4 className="text-xl sm:text-2xl xl:text-4xl text-foreground">
-            <strong>Rane Gillian Villanueva</strong>
+            <strong>Rane Villanueva</strong>
           </h4>
           <p className="text-accent-light">
             <MdSchool className="inline text-accent-light mr-1 my-auto" />

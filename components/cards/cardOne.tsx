@@ -32,7 +32,7 @@ export default function CardOne({ onTop }: any) {
     },
   };
 
-  const rgv = Array.from("Rane Gillian.");
+  const rgv = Array.from("Rane Villanueva.");
 
   return (
     <div className="flex flex-col text-center container-sm p-10 sm:px-12 md:px-20 lg:px-24 mt-5 rounded-md lg:flex lg:flex-row">

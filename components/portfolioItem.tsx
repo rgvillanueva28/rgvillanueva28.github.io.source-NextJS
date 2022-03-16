@@ -23,14 +23,14 @@ export default function PortfolioItem({
           ))}
         </div>
         <div className="flex flex-row space-x-4 text-accent-light ml-auto mt-auto">
-          <a
+          {ghLink ? <a
             href={ghLink}
             target="_blank"
             rel="noreferrer noopener"
             className="hover:text-foreground "
           >
             <FaGithub size={28} />
-          </a>
+          </a>: null}
           {link ? (
             <a
               href={link}
